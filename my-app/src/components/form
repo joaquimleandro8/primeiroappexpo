@@ -1,0 +1,27 @@
+import React, { useState } from "react";
+import { Button, Text, TextInput, View } from "react-native";
+ 
+export default function Form(props) {
+  return (
+    <View>
+      <View>
+        <Text>Altura</Text>
+        <TextInput
+          onChangeText={setHeight}
+          value={height}
+          placeholder="Ex: 1.75"
+          keyboardType="numeric"
+        />
+        <Text>Peso</Text>
+        <TextInput
+          onChangeText={setWeight}
+          value={weight}
+          placeholder="Ex: 75.365n"
+          keyboardType="numeric"
+        />
+        <Button title={textButton} onPress={() => imcCalc()} />
+      </View>
+      <ResultImc messageResultIMc={messageImc} resultImc={imc} />
+    </View>
+  );
+}
